@@ -10,10 +10,11 @@
 * Sinatra
 * Heroku
 * Capybara
+* simplecov
 
 ## Description
 
-
+A website built with Ruby showcasing nexted routing with the use of Rspec, Sinatra, Capybara, Heroku, and more, to allow a user to CRUD words and nested definitions for those words. 
 
 ## Setup/Installation Requirements
 
