@@ -45,3 +45,9 @@ patch("/words/:id") do
   @word.update(params[:word])
   redirect to("/words/#{params[:id]}")
 end
+
+delete("/words/:id") do 
+  @word = Word.find(params[:id].to_i)
+  @word.delete
+  redirect to("/words")
+end
