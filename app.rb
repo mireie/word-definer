@@ -71,3 +71,9 @@ patch("/words/:id/definitions/:definition_id") do
   @definition.update(params[:definition])
   redirect(to("/words/#{params[:id]}"))
 end
+
+delete("/words/:id/definitions/:definition_id") do
+  @definition= Definition.find(params[:definition_id].to_i)
+  @definition.delete
+  redirect(to("/words/#{params[:id]}"))
+end
