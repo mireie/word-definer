@@ -36,4 +36,8 @@ class Word
   def update(word)
     @word = word
   end
+
+  def definitions
+    Definition.find_by_word(self.id)
+  end
 end

@@ -17,7 +17,7 @@ describe("#Word") do
       expect(word).to(eq(word2))
     end
   end
-  
+
   describe("#save") do
     it("saves a word") do
       word = Word.new(nil, "Hippopotamus")
@@ -77,9 +77,23 @@ describe("#Word") do
   describe(".update") do
     it("updates a word") do
       word = Word.new(nil, "Hippopotamus")
-      word.save
+      word.save()
       word.update("Frank")
       expect(word.word).to(eq("Frank"))
+    end
+  end
+
+  describe("#definitions") do
+    it("returns a word's definitions") do
+      Word.clear
+      Definition.clear
+      word = Word.new(nil, "antidisestablishmentarianism")
+      word.save
+      definition = Definition.new(nil, 'a position that advocates that a state Church (the "established church") should continue to receive government patronage, rather than be disestablished.', word.id)
+      definition2 = Definition.new(nil, "a really long word.", word.id)
+      definition.save
+      definition2.save
+      expect(word.definitions).to(eq([definition, definition2]))
     end
   end
 end
