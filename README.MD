@@ -1,4 +1,4 @@
-# The WOrd Definer
+# The Word Definer
 #### By Michael Reiersgaard
 
 ## Technologies Used
@@ -12,7 +12,7 @@
 
 ## Description
 
-A Ruby script that will allow a user to put in two strings and determine whether or not the two are anigrams or antigrams of eachother. If not, Annagrammar will return the number of matching letters.
+
 
 ## Setup/Installation Requirements
 
@@ -26,7 +26,7 @@ A Ruby script that will allow a user to put in two strings and determine whether
 
 ## Links
 - [GitHub Repo](https://github.com/mireie/)
-- [Heroku:]()
+- [Heroku:](https://example.com)
 
 ## Known Bugs
 
