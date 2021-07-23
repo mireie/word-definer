@@ -7,8 +7,8 @@ describe("#Word") do
     Word.clear()
   end
 
-  describe(".save") do
-    it("saves an inputted word") do
+  describe("#save") do
+    it("saves a word") do
       word = Word.new(nil, "Hippopotamus")
       word.save
       expect(Word.all[0].word).to(eq("Hippopotamus"))
@@ -31,6 +31,16 @@ describe("#Word") do
       word2 = Word.new(nil, "Geoff")
       word2.save
       expect(Word.find(word2.id)).to(eq(word2))
+    end
+  end
+
+  describe(".all") do
+    it("returns an array of all words") do
+      word = Word.new(nil, "Hippopotamus")
+      word.save
+      word2 = Word.new(nil, "Geoff")
+      word2.save
+      expect(Word.all).to(eq([word, word2]))
     end
   end
 end
