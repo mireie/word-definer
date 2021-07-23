@@ -1,10 +1,24 @@
 require "rspec"
 require "definition"
+require "Word"
 require "pry"
 
 describe("#Definition") do
   before(:each) do
     Definition.clear()
+    Word.clear()
+    @word = Word.new(nil,"Dragon")
+    @word.save
+  end
+
+  describe("#==") do
+    it("is the same definition if it has the same attributes as another definition") do
+      definition = Definition.new(nil, "Firey Beast")
+      definition2 = Definition.new(nil, "Firey Beast")
+      definition.save
+      definition2.save
+      expect(definition).to(eq(definition2))
+    end
   end
 
   describe("#save") do
@@ -60,6 +74,15 @@ describe("#Definition") do
       definition2.save
       definition.delete
       expect(Definition.all).to(eq([definition2]))
+    end
+  end
+
+  describe(".update") do
+    it("updates a definition") do
+      definition = Definition.new(nil, "Hippopotamus")
+      definition.save
+      definition.update("Frank")
+      expect(definition.definition).to(eq("Frank"))
     end
   end
 

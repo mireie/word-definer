@@ -1,12 +1,23 @@
 require "rspec"
 require "word"
 require "pry"
+require "definition"
 
 describe("#Word") do
   before(:each) do
     Word.clear()
   end
 
+  describe("#==") do
+    it("is the same word if it has the same attributes as another word") do
+      word = Word.new(nil, "Firey Beast")
+      word2 = Word.new(nil, "Firey Beast")
+      word.save
+      word2.save
+      expect(word).to(eq(word2))
+    end
+  end
+  
   describe("#save") do
     it("saves a word") do
       word = Word.new(nil, "Hippopotamus")

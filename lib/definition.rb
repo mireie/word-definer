@@ -1,5 +1,6 @@
 class Definition
-  attr_reader :id, :definition
+  attr_reader :id
+  attr_accessor :definition, :word_id
   @@definitions = {}
   @@total_rows = 0
 
@@ -35,5 +36,8 @@ class Definition
 
   def update(definition)
     @definition = definition
+  end
+
+  def find_by_word
   end
 end
