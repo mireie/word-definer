@@ -9,3 +9,19 @@ get("/") do
   @words = Word.all
   erb(:words)
 end
+
+get("/words") do
+  @words = Word.all
+  erb(:words)
+end
+
+get("/words/new") do
+  erb(:new_word)
+end
+
+post("/words") do
+  input_word = params[:word]
+  word = Word.new(nil, input_word)
+  word.save
+  redirect to("/")
+end
