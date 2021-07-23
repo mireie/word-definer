@@ -26,10 +26,14 @@ class Word
   end
 
   def ==(word_to_compare)
-    self.word() ==word_to_compare.word()
+    self.word() == word_to_compare.word()
   end
 
   def delete
     @@words.delete(self.id)
+  end
+
+  def update(word)
+    @word = word
   end
 end
