@@ -65,3 +65,9 @@ post("/words/:id/definitions") do
   definition.save
   redirect to("/words/#{params[:id]}")
 end
+
+patch("/words/:id/definitions/:definition_id") do
+  @definition= Definition.find(params[:definition_id].to_i)
+  @definition.update(params[:definition])
+  redirect(to("/words/#{params[:id]}"))
+end
