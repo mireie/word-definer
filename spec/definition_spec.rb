@@ -85,5 +85,16 @@ describe("#Definition") do
       expect(definition.definition).to(eq("An uncool thing"))
     end
   end
+  describe(".find_by_word") do
+    it("finds definitions for a word") do
+      word2 = Word.new(nil,"antidisestablishmentarianism")
+      word2.save
+      definition = Definition.new(nil,'A Firey Beast',@word.id)
+      definition2 = Definition.new(nil,'a position that advocates that a state Church (the "established church") should continue to receive government patronage, rather than be disestablished.d',word2.id)
+      definition.save
+      definition2.save
+      expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
+    end
+  end
 
 end
