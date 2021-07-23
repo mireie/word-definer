@@ -9,6 +9,7 @@
 * Pry
 * Sinatra
 * Heroku
+* Capybara
 
 ## Description
 
