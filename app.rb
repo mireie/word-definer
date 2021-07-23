@@ -5,6 +5,7 @@ require("./lib/definition")
 require("pry")
 also_reload("lib/**/*.rb")
 
+#word routes
 get("/") do
   @words = Word.all
   erb(:words)
@@ -46,8 +47,21 @@ patch("/words/:id") do
   redirect to("/words/#{params[:id]}")
 end
 
-delete("/words/:id") do 
+delete("/words/:id") do
   @word = Word.find(params[:id].to_i)
   @word.delete
   redirect to("/words")
+end
+
+#definition routes
+get("/words/:id/definitions/:definition_id") do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:definition)
+end
+
+post("/words/:id/definitions") do
+  @word = Word.find(params[:id].to_i)
+  definition = Definition.new(nil, params[:definition], @word.id)
+  definition.save
+  redirect to("/words/#{params[:id]}")
 end
