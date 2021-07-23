@@ -12,3 +12,13 @@ describe('create a word path', {:type => :feature}) do
     expect(page).to have_content('antidisestablishmentarianism')
   end
 end
+describe('create a definition path', {:type => :feature}) do
+  it('creates a definiton and then goes to the defintion page') do
+    word = Word.new(nil,"antidisestablishmentarianism")
+    word.save
+    visit("/words/#{word.id}")
+    fill_in('definition', :with => 'A reaaaaly long word')
+    click_on('Add definition')
+    expect(page).to have_content('reaaaaly')
+  end
+end
