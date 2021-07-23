@@ -7,7 +7,7 @@ describe("#Definition") do
   before(:each) do
     Definition.clear()
     Word.clear()
-    @word = Word.new(nil,"Dragon")
+    @word = Word.new(nil, "Dragon")
     @word.save()
   end
 
@@ -87,14 +87,20 @@ describe("#Definition") do
   end
   describe(".find_by_word") do
     it("finds definitions for a word") do
-      word2 = Word.new(nil,"antidisestablishmentarianism")
+      word2 = Word.new(nil, "antidisestablishmentarianism")
       word2.save
-      definition = Definition.new(nil,'A Firey Beast',@word.id)
-      definition2 = Definition.new(nil,'a position that advocates that a state Church (the "established church") should continue to receive government patronage, rather than be disestablished.d',word2.id)
+      definition = Definition.new(nil, "A Firey Beast", @word.id)
+      definition2 = Definition.new(nil, 'a position that advocates that a state Church (the "established church") should continue to receive government patronage, rather than be disestablished.d', word2.id)
       definition.save
       definition2.save
       expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
     end
   end
-
+  describe("#word") do
+    it("finds the word a definition belongs to") do
+      definition = Definition.new(nil, "A Firey Beast", @word.id)
+      definition.save
+      expect(definition.word).to(eq(@word))
+    end
+  end
 end
