@@ -23,4 +23,14 @@ describe("#Word") do
       expect(Word.all).to(eq([]))
     end
   end
+
+  describe(".find") do
+    it("returns a word by ID") do
+      word = Word.new(nil, "Hippopotamus")
+      word.save
+      word2 = Word.new(nil, "Geoff")
+      word2.save
+      expect(Word.find(word2.id)).to(eq(word2))
+    end
+  end
 end
