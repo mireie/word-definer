@@ -16,10 +16,6 @@ get("/words") do
   erb(:words)
 end
 
-get("/words/") do
-  redirect to ("/words")
-end
-
 get("/words/new") do
   erb(:new_word)
 end
