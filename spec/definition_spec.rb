@@ -3,7 +3,7 @@ SimpleCov.start
 
 require "rspec"
 require "definition"
-require "Word"
+require "word"
 require "pry"
 
 describe("#Definition") do
