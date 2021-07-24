@@ -29,7 +29,7 @@ A website built with Ruby showcasing nexted routing with the use of Rspec, Sinat
 
 ## Links
 - [GitHub Repo](https://github.com/mireie/word-definer)
-- [Heroku:](https://floating-basin-60749.herokuapp.com/)
+- [Heroku](https://floating-basin-60749.herokuapp.com/)
 
 ## Known Bugs
 
