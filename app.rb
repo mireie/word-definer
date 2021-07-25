@@ -24,7 +24,7 @@ post("/words") do
   input_word = params[:word]
   word = Word.new(nil, input_word)
   word.save
-  redirect to("/words")
+  redirect to("/words/#{word.id}")
 end
 
 get ("/words/:id") do

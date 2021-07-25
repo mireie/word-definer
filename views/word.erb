@@ -2,7 +2,7 @@
 <h1 class="display-2"><%= @word.word %></h1>
 <p><a href="/words/<%= @word.id %>/edit" class="btn btn-warning">Edit Word</a></p>
 <div class="row">
-  <div class="col">
+  <div class="col-md">
     <h2>Definitions for <%= @word.word %></h2>
     <% if @word.definitions.any? %>
       <ul>
@@ -14,7 +14,7 @@
       <p>There are no definitions for this word yet, add one!</p>
     <% end %>
   </div>
-  <div class="col">
+  <div class="col-md">
     <h2>Add a definition</h2>
     <form action = "/words/<%= @word.id %>/definitions" method="post">
       <div class="form-group">
