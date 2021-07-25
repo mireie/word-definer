@@ -4,18 +4,18 @@
 <blockquote class="blockquote"><%= @definition.definition %></blockquote>
 <h3>Update Definition:</h3>
 <div class="row">
-  <div class="col-10">
+  <div class="col-md-10">
     <form class="row g-3" action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
       <div class="form-group col-10" >
         <textarea required id="w" rows="3" name="definition" class="form-control" type="text"></textarea>
       </div>
-      <div class="col-2">
+      <div class="col-md-2">
         <input name="_method" type="hidden" value="patch">
         <button type="submit" id="update" class="btn btn-primary">Update definition!</button>
       </div>
     </form>
   </div>
-  <div class="col-2">
+  <div class="col-md-2">
     <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
       <input name="_method" type="hidden" value="delete">
       <button type="submit" class="btn btn-danger">Delete definition!</button>

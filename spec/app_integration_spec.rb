@@ -58,7 +58,6 @@ describe('#Definition', {:type => :feature}) do
     click_on('A reaaaaly long word')
     fill_in('definition', :with => 'A reaaaaaaaaaaaaly long word')
     click_on('Update definition!')
-    save_and_open_page
     expect(page).to have_content('reaaaaaaaaaaaaly')
   end
   it('deletes a defintion') do
