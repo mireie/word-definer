@@ -1,5 +1,6 @@
+<a href="/"><- Return to word list</a>
 <h1><%=@word.word%></h1>
-<p><a href="/words/<%=@word.id%>/edit">Edit Word</p></a>
+<p><a href="/words/<%=@word.id%>/edit" class="btn btn-warning">Edit Word</p></a>
 
 <h2>Definitions for <%=@word.word%></h2>
 
@@ -21,5 +22,3 @@
   </div>
   <button type="submit" class="btn btn-primary">Add definition for <%=@word.word%>!</button>
   </form>
-
-<a href="/words">Return to word list</a>
