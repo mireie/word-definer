@@ -1,21 +1,24 @@
-<h1><%= @definition.word.word %></h1>
-
-<h2>Definition:</h2>
-<p><%= @definition.definition %></p>
-
-<h3>Update Definition:</h3>
-
-<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
-  <div class="form-group">
-    <label for="definition">Change Definition</label>
-    <input id="w" name="definition" class="form-control" type="text">
-  </div>
-  <button type="submit" class="btn btn-primary">Update definition!</button>
-</form>
-<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-  <button type="submit" class="btn btn-danger">Delete definition!</button>
-</form>
-
 <p><a href = "/words">Return to the list of words</a></p>
+<h1><%= @definition.word.word %></h1>
+<h2>Definition:</h2>
+<blockquote class="blockquote"><%= @definition.definition %></blockquote>
+<h3>Update Definition:</h3>
+<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
+  <div class="row">
+    <div class="col-8">
+      <input name="_method" type="hidden" value="patch">
+      <div class="form-group">
+        <input id="w" name="definition" class="form-control" type="text">
+      </div>
+    </div>
+    <div class="col-2">
+      <button type="submit" class="btn btn-primary">Update definition!</button>
+    </div>
+  </form>
+  <div class="col-2">
+    <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn btn-danger">Delete definition!</button>
+    </form>
+  </div>
+</div>

@@ -1,13 +1,17 @@
-<h1>Words</h1>
-
-<% if @words.any? %>
-  <ul>
-    <% @words.each do |word| %>
-      <li><a href="/words/<%=word.id%>"><%= word.word %></a></li>
+<h1>The Word Definer!</h1>
+<p>Enter in words that you'd like to know the definitions for! If a words has been entered, you can click on it to see definitions that have been added or add one of your own!</p>
+<div class="row">
+  <div class="col-md">
+    <h2>Available Words</h2>
+    <% if @words.any? %>
+      <ul>
+        <% @words.each do |word| %>
+          <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no words to display, add one!</p>
     <% end %>
-  </ul>
-<% else %>
-<p>There are no words to display, add one!</p>
-
-<% end %>
-<a href ="/words/new" class="btn btn-primary">Add a new word</a>
+    <a href ="/words/new" class="btn btn-primary">Add a new word</a>
+  </div>
+</div>
