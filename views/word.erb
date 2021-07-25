@@ -1,7 +1,6 @@
 <a href="/">Return to word list</a>
 <h1 class="display-2"><%= @word.word %></h1>
-<p><a href="/words/<%= @word.id %>/edit" class="btn btn-warning">Edit Word</p>
-</a>
+<p><a href="/words/<%= @word.id %>/edit" class="btn btn-warning">Edit Word</a></p>
 <div class="row">
   <div class="col">
     <h2>Definitions for <%= @word.word %></h2>
@@ -19,10 +18,9 @@
     <h2>Add a definition</h2>
     <form action = "/words/<%= @word.id %>/definitions" method="post">
       <div class="form-group">
-        <label for="word">Definition</label>
-        <input id="w" name="definition" class="form-control" type="text">
+        <textarea required id="w" name="definition" class="form-control" type="text" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Add definition for <%= @word.word %>!</button>
+      <button type="submit" id="add" class="btn btn-primary mt-3">Add definition for <%= @word.word %>!</button>
     </form>
   </div>
 </div>
